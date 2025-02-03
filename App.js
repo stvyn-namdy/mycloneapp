@@ -1,31 +1,43 @@
 import React from 'react';
 import { 
   View,
-  Text, 
-  Image,
+  Text,
+  Image, 
   StyleSheet, 
+  StatusBar,
   SafeAreaView,
   TouchableOpacity, 
-  
 } from 'react-native';
 
 export default function App() {
-  const DuolingOwl = () => (
-    <View style={styles.container}>
-    <View style={styles.owl}>
-      <View style={styles.eyesContainer}>
-        <View style={styles.eyes} />
-        <View style={styles.eyes} />
-      </View>
-      <View style={styles.beak} />
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor='#034140' barStyle='light-content' />
+
+    <View style={styles.content}>
+      <Image
+        source={require('./assets/duolingo-logo.webp')}
+        style={styles.logo}
+        resizeMode='contain'
+       />
+
+        <Text style={styles.tagline}>
+          Learn a Language for {'\n'} free. Forever.
+        </Text>
+
+      <TouchableOpacity style={styles.getStartedButton}>
+        <Text style={styles.getStartedText}>GET STARTED</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.accountButton}>
+        <Text style={styles.accountText}>I ALREADY HAVE AN ACCOUNT</Text>
+      </TouchableOpacity>
     </View>
-    <View style={styles.feet} />
-   </View>
-  );
 
-  
+    </SafeAreaView>
+  )
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -38,41 +50,48 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20
   },
-  owlContainer: {
-    alignItems: 'center',
+  logo: {
+    width: 100,
+    height: 100,
     marginBottom: 20
   },
-  owl: {
-    width: 80,
-    height: 80,
+  logoText: {
+    fontSize: 36,
+    color: '#58CC02',
+    fontWeight: 'bold',
+    marginBottom: 20
+  },
+  tagline: {
+    fontSize: 20,
+    color: '#777777',
+    textAlign: 'center',
+    marginBottom: 40
+  },
+  getStartedButton: {
     backgroundColor: '#58CC02',
-    borderRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center'
+    width: '100%',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 15
   },
-  eyesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 40
+  getStartedText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  eyes: {
-    width: 15,
-    height: 15,
-    backgroundColor: 'white',
-    borderRadius: 7.5
+  accountButton: {
+    borderWidth: 2,
+    borderColor: '#58CC02',
+    width: '100%',
+    padding: 15,
+    borderRadius: 12,
+    marginBottom: 100
   },
-  beak: {
-    width: 8,
-    height: 8,
-    backgroundColor: '#FF9600',
-    borderRadius: 4,
-    marginTop: 5
-  },
-  feet: {
-    width: 30,
-    height: 4,
-    backgroundColor: '#FF9600',
-    borderRadius: 2,
-    marginTop: 5
+  accountText: {
+    color: '#58CC02',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });
