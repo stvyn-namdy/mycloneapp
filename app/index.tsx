@@ -8,8 +8,18 @@ import {
   SafeAreaView,
   TouchableOpacity, 
 } from 'react-native';
+import { useRouter } from 'expo-router'
 
-export default function App() {
+export default function HomeScreen() {
+  const router = useRouter()
+
+  const navigateToGetStarted = () => {
+    router.push('/(tabs)/started')
+  }
+
+  const navigateToLogin = () => {
+    router.push('/(tabs)/login')
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -17,7 +27,7 @@ export default function App() {
 
     <View style={styles.content}>
       <Image
-        source={require('./assets/duolingo-logo.webp')}
+        source={require('../assets/images/duolingo-logo.webp')}
         style={styles.logo}
         resizeMode='contain'
        />
@@ -26,15 +36,15 @@ export default function App() {
           Learn a Language for {'\n'} free. Forever.
         </Text>
 
-      <TouchableOpacity style={styles.getStartedButton}>
+      <TouchableOpacity style={styles.getStartedButton} onPress={navigateToGetStarted}>
         <Text style={styles.getStartedText}>GET STARTED</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.accountButton}>
+      <TouchableOpacity style={styles.accountButton} onPress={navigateToLogin}>
         <Text style={styles.accountText}>I ALREADY HAVE AN ACCOUNT</Text>
       </TouchableOpacity>
-    </View>
 
+    </View>
     </SafeAreaView>
   )
 }
@@ -62,8 +72,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   tagline: {
-    fontSize: 20,
-    color: '#777777',
+    fontSize: 22,
+    color: '#fcfcfc',
     textAlign: 'center',
     marginBottom: 40
   },
