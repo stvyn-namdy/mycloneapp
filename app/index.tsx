@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import { 
   View,
   Text,
@@ -8,10 +8,17 @@ import {
   SafeAreaView,
   TouchableOpacity, 
 } from 'react-native';
-import { useRouter } from 'expo-router'
+import { useRouter, useNavigation } from 'expo-router'
 
 export default function HomeScreen() {
   const router = useRouter()
+  const navigation = useNavigation()
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false
+    })
+  }, [navigation]);
 
   const navigateToGetStarted = () => {
     router.push('/(tabs)/started')
