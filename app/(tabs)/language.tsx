@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  FlatList,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-} from "react-native";
-import { useRouter } from "expo-router";
+import React, { useState } from 'react';
+import 
+  { View, 
+    Text, 
+    TextInput, 
+    FlatList, 
+    TouchableOpacity, 
+    Image, 
+    StyleSheet 
+  } from 'react-native';
+import { useRouter } from 'expo-router';
 
 const languages = [
-  { name: "USA", flag: require("../../assets/flags/USA.png") },
-  { name: "UK", flag: require("../../assets/flags/UK.png") },
-  { name: "Turkey", flag: require("../../assets/flags/Turkey.png") },
-  { name: "Canada", flag: require("../../assets/flags/Canada.png") },
-  { name: "Germany", flag: require("../../assets/flags/Germany.png") },
-  { name: "Ireland", flag: require("../../assets/flags/Ireland.png") },
-  { name: "France", flag: require("../../assets/flags/France.png") },
-  { name: "China", flag: require("../../assets/flags/China.png") },
-  { name: "Japan", flag: require("../../assets/flags/Japan.png") },
-  { name: "Korea", flag: require("../../assets/flags/SouthKorea.png") },
-  { name: "Thailand", flag: require("../../assets/flags/Thailand.png") },
-  { name: "Vietnam", flag: require("../../assets/flags/Vietnam.png") },
+  { name: 'USA', flag: require('../../assets/flags/USA.png') },
+  { name: 'UK', flag: require('../../assets/flags/UK.png') },
+  { name: 'Turkey', flag: require('../../assets/flags/Turkey.png') },
+  { name: 'Canada', flag: require('../../assets/flags/Canada.png') },
+  { name: 'Germany', flag: require('../../assets/flags/Germany.png') },
+  { name: 'Ireland', flag: require('../../assets/flags/Ireland.png') },
+  { name: 'France', flag: require('../../assets/flags/France.png') },
+  { name: 'China', flag: require('../../assets/flags/China.png') },
+  { name: 'Japan', flag: require('../../assets/flags/Japan.png') },
+  { name: 'Korea', flag: require('../../assets/flags/SouthKorea.png') },
+  { name: 'Thailand', flag: require('../../assets/flags/Thailand.png') },
+  { name: 'Vietnam', flag: require('../../assets/flags/Vietnam.png') },
 ];
 
 const language = () => {
@@ -113,12 +113,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
-  flagImage: {
-    width: 40,
-    height: 25,
-    marginRight: 10,
-    borderRadius: 5,
-  },
+  // flagImage: {
+  //   width: 40,
+  //   height: 25,
+  //   marginRight: 10,
+  //   borderRadius: 5,
+  // },
 });
 
 export default language;
