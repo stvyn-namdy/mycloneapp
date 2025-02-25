@@ -8,6 +8,7 @@ import
     Image, 
     StyleSheet 
   } from 'react-native';
+import { useRouter } from 'expo-router';
 
 const languages = [
   { name: 'USA', flag: require('../../assets/flags/USA.png') },
